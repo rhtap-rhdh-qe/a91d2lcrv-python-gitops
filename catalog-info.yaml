@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: a91d2lcrv-python-gitops
+  description: This is GitOps manifest for a91d2lcrv-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=a91d2lcrv-python
+    backstage.io/kubernetes-id: a91d2lcrv-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: a91d2lcrv-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:a91d2lcrv-python
